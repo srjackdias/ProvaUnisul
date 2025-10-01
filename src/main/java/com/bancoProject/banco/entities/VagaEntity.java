@@ -10,7 +10,7 @@ import jakarta.persistence.OneToOne;
 
 
 
-@Entity(name = "Vagas")
+@Entity(name = "vaga")
 public class VagaEntity {
     
 
@@ -33,7 +33,7 @@ public class VagaEntity {
     private String experiencia;
 
     @OneToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "usuario_id")
     private UsuarioEntity usuario;
 
     public Long getId_vaga() {

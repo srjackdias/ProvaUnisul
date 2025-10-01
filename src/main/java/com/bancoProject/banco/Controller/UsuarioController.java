@@ -24,11 +24,24 @@ public class UsuarioController {
     UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<?> CreateUsuario(@RequestBody  CreateUsuarioDto dto){
+    public ResponseEntity<?> CreateUsuario(@RequestBody CreateUsuarioDto dto) {
 
         System.out.println(dto.getNome());
+        System.out.println(dto.getSenha());
+        System.out.println(dto.getTipo());
+
         System.out.println(dto.getCandidato().getTitulo());
+        System.out.println(dto.getCandidato().getExperiencia());
+        System.out.println(dto.getCandidato().getCidade());
+        System.out.println(dto.getCandidato().getDescricao());
+        System.out.println(dto.getCandidato().getFunçaoVaga());
+
         System.out.println(dto.getVaga().get(0).getNomeCandidato());
+        System.out.println(dto.getVaga().get(0).getCidadeCandidato());
+        System.out.println(dto.getCandidato().getDescricao());
+        System.out.println(dto.getCandidato().getExperiencia());
+
+
 
         usuarioService.CreateUsuario(dto);
 
@@ -38,18 +51,12 @@ public class UsuarioController {
 
     @GetMapping
 
-    public ResponseEntity<?> getAllusuarios(){
-
+    public ResponseEntity<?> getAllusuarios() {
 
         List<ShowUsuarioDto> usuarios = usuarioService.getAllusuarios();
 
-
         return ResponseEntity.status(200).body(usuarios);
 
-
-
     }
-
-
 
 }

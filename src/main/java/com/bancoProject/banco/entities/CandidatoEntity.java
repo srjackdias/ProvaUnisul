@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
-@Entity(name= "Candidatos")
+@Entity(name= "candidato")
 public class CandidatoEntity {
 
     @Id
@@ -22,8 +22,10 @@ public class CandidatoEntity {
     @Column(name = "titulo")
     private String titulo;
 
-    @Column(name = "funçaoVaga")
-    private String funçaoVaga;
+
+    @Column(name = "funçaovaga", nullable = true)
+    private String funçaovaga;
+
 
 
     @Column(name = "cidade")
@@ -35,7 +37,11 @@ public class CandidatoEntity {
 
 
     @OneToOne
-    @JoinColumn(name = "id_funcionario")
+
+    
+    @JoinColumn(name = "usuario_id",nullable = true)
+
+    
     private UsuarioEntity usuario;
 
 
@@ -60,12 +66,12 @@ public class CandidatoEntity {
 
 
     public String getFunçaoVaga() {
-        return funçaoVaga;
+        return funçaovaga;
     }
 
 
     public void setFunçaoVaga(String funçaoVaga) {
-        this.funçaoVaga = funçaoVaga;
+        this.funçaovaga = funçaoVaga;
     }
 
 

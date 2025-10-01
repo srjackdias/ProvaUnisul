@@ -46,6 +46,10 @@ public class UsuarioService {
         candidatoEntity.setCidade(dto.getCandidato().getCidade());
         candidatoEntity.setDescricao(dto.getCandidato().getDescricao());
 
+        candidatoEntity.setUsuario(usuarioEntity);
+        usuarioEntity.setCandidato(candidatoEntity);
+
+
         candidatoEntity = candidatoRepository.save(candidatoEntity);
 
         List<VagaEntity> VagasEntity = new ArrayList<>();

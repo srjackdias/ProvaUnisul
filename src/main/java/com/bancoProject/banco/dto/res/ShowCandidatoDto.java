@@ -3,7 +3,7 @@ package com.bancoProject.banco.dto.res;
 public class ShowCandidatoDto {
     
     private String titulo;
-    private String funçaoVaga;
+    private String funçaovaga;
 
     private String experiencia;
     private String cidade;
@@ -15,10 +15,10 @@ public class ShowCandidatoDto {
         this.titulo = titulo;
     }
     public String getFunçaoVaga() {
-        return funçaoVaga;
+        return funçaovaga;
     }
     public void setFunçaoVaga(String funçaoVaga) {
-        this.funçaoVaga = funçaoVaga;
+        this.funçaovaga = funçaoVaga;
     }
     public String getExperiencia() {
         return experiencia;

@@ -2,6 +2,7 @@ package com.bancoProject.banco.entities;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
-@Entity(name = "Projetos")
+@Entity(name = "usuario")
 public class UsuarioEntity {
     
     @Id
@@ -29,10 +30,12 @@ public class UsuarioEntity {
     private String tipo;
 
    
-    @OneToOne(mappedBy ="Usuario")
-    private CandidatoEntity  candidato;
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private CandidatoEntity candidato;
 
-    @OneToMany(mappedBy = "Usuario")
+    
+
+    @OneToMany(mappedBy = "usuario")
     private List <VagaEntity> vaga;
 
     public Long getId_usuario() {
